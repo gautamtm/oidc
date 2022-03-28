@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+@if(User.Identity.IsAuthenticated){ 
+    <div><a asp-action="Logout" asp-controller="Home">Logout</a> </div>
+}
+<h1>@ViewData["Title"]</h1>
+<h1>Hello @User.Claims.FirstOrDefault(c => c.Type == "displayName").Value</h1>
+<p>Use this page to detail your site's privacy policy.</p>
+
+<h1>@User.Identity.Name</h1>
